@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Strona o ziołach</title>
+    <style>
+        body {
+            background-color: #b5e5c7;
+        }
+
+        * {
+            font-family: 'Times New Roman', serif;
+        }
+
+        #header {
+            background-color: #1b6027;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            
+        }
+
+        #description {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-top: 20px;
+            margin-left: 70px;
+            margin-right: 70px;
+            background-color: #49aa3d;
+            text-align: center;
+            font-weight: bold;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #herb-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .herb-block {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: #1c792c;
+            margin: 10px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .herb-name {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .info-container {
+            display: none;
+            background-color: #116a42;
+            margin-top: 50px;
+            overflow: hidden;
+            clear: both;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            font-style: italic;
+        }
+
+        .info-container.active {
+            display: block;
+        }
+
+        .info-container img {
+            float: left;
+            width: 350px;
+            margin-right: 20px;
+        }
+
+
+        .info-container .herb-info {
+            padding: 20px;
+            color: white;
+        }
+
+        .info-container h2 {
+            margin-top: 0;
+            font-weight: bold;
+        }
+
+        .info-container h3 {
+            margin-top: 0;
+            font-weight: bold;
+        }
+
+        .info-container p {
+            margin-top: 10px;
+        }
+
+        .info-container ul, .info-container ol {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .info-container table {
+            margin-top: 20px;
+            width: 100%;
+            color: white;
+        }
+
+        .info-container tr,
+        .info-container td {
+            padding: 5px;
+            border: 1px solid white;
+        }
+
+        .info-container:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #309965;
+        }
+
+        #about-me {
+            background-color: #1b6027;
+            padding: 50px;
+            text-align: left;
+            color: white;
+            margin-top: 30px;
+        }
+        #about-me img {
+            float: left;
+            width: 200px;
+            margin-right: 20px;
+            bottom: -25px
+        }
+
+        #about-me h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Moje ulubione zioła</h1>
+    </div>
+
+    <div id="description">
+        <p>Z racji tego, że: 
+            <br>sesja jest stresującym okresem w życiu studenta, 
+            <br>piwa wiecznie pić nie można, 
+            <br>a ja jestem zapalonym zielarzem, 
+            <br>to chciałem się z wami podzielić moimi trzema ululbionymi ziołami o działaniu uspokajającym, 
+            <br>o których możecie poczytać klikając poniższe grafiki.</p>
+        <p> A jeśli chcielibyście się dowiedzieć jak zaczęła się moja historia z ziołolecznictwem wystarczy kliknąć <a href="#about-me">tutaj.</a></p>
+    </div>
+
+    <div id="herb-container">
+        <div class="herb-block" onclick="toggleInfo(1)">
+            <div class="herb-name">Konopie siewne</div>
+            <img src="Zdjecia/marycha.png" alt="Konopie siewne rysunek" width="170">
+        </div>
+        <div class="herb-block" onclick="toggleInfo(2)">
+            <div class="herb-name">Piołun</div>
+            <img src="Zdjecia/absynd.png" alt="piołun rysunek" width="200">
+        </div>
+        <div class="herb-block" onclick="toggleInfo(3)">
+            <div class="herb-name">Chmiel</div>
+            <img src="Zdjecia/hmiel.png" alt="chmiel rysunek" width="175">
+        </div>
+    </div>
+
+    <div id="info-container-1" class="info-container">
+        <div class="herb-info">
+            <img src="Zdjecia/Konopie-siewnee.png" alt="Konopie siewne">
+            <div>
+                <h2>Konopie siewne</h2>
+                <p>Konopie siewne, znane również jako <span class="highlight">Cannabis sativa</span>, są roślinami znanymi ze swojego potencjału uspokajającego. Zawierają one naturalne związki, takie jak kannabinoidy, w tym CBD (kannabidiol), który ma działanie relaksujące na układ nerwowy. Dzięki temu konopie siewne są wykorzystywane w celu łagodzenia stresu, redukcji napięcia mięśniowego oraz poprawy jakości snu.</p>
+                <h3>Inne właściwości:</h3>
+                <ul>
+                    <li>przeciwbólowe</li>
+                    <li>przeciwwymiotne</li>
+                    <li>przeciwzapalne</li>
+                </ul>
+            </div>
+            <table>
+                <tr>
+                    <th>Składnik</th>
+                    <th>Ilość</th>
+                </tr>
+                <tr>
+                    <td>CBD</td>
+                    <td>100 mg</td>
+                </tr>
+                <tr>
+                    <td>THC</td>
+                    <td>5 mg</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="info-container-2" class="info-container">
+        <div class="herb-info">
+            <img src="Zdjecia/PIOLUN.jpg" alt="Piołun">
+            <div>
+                <h2>Piołun</h2>
+                <p>Bylica piołun, znana również jako <span class="highlight">Artemisia absinthium</span>, jest ziołem o silnym działaniu uspokajającym. Jej składniki, takie jak tujon, działają na układ nerwowy, przynosząc ulgę w przypadku lęków, nerwicy i bezsenności. Spożywanie naparów z bylicy piołunowej może przynieść uczucie ukojenia i relaksu, wspomagając przywrócenie równowagi emocjonalnej.</p>
+                <h3>Inne właściwości:</h3>
+                <ol>
+                    <li>trawienne</li>
+                    <li>przeciwpasożytnicze</li>
+                    <li>pobudzające apetyt</li>
+                  </ol>
+            </div>
+            <table>
+                <tr>
+                    <th>Składnik</th>
+                    <th>Ilość</th>
+                </tr>
+                <tr>
+                    <td>Tujon</td>
+                    <td>50 mg</td>
+                </tr>
+                <tr>
+                    <td>Inne składniki</td>
+                    <td>20 mg</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="info-container-3" class="info-container">
+        <div class="herb-info">
+            <img src="Zdjecia/chmiel-zwyczajny-1.jpg" alt="Chmiel">
+            <div>
+                <h2>Chmiel</h2>
+                <p>Chmiel, znany jako <span class="highlight">Humulus lupulus</span>, jest rośliną o działaniu uspokajającym. Zawiera naturalne substancje, takie jak humulon i lupulon, które działają na układ nerwowy, przynosząc uczucie relaksu i redukując napięcie. W związku z tym, chmiel jest często stosowany w herbatkach czy suplementach ziołowych jako naturalny środek wspomagający sen i łagodzący objawy stresu.</p>
+                <h3>Inne właściwości:</h3>
+                <ul>
+                    <li>przeciwbakteryjne</li>
+                    <li>rozkurczające</li>
+                    <li>antyoksydacyjne</li>
+                </ul>
+            </div>
+            <table>
+                <tr>
+                    <th>Składnik</th>
+                    <th>Ilość</th>
+                </tr>
+                <tr>
+                    <td>Lupulon</td>
+                    <td>30 mg</td>
+                </tr>
+                <tr>
+                    <td>Inne składniki</td>
+                    <td>15 mg</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="about-me">
+        <h2>O mnie</h2>
+        <img src="Zdjecia/filipeq.jpg" alt="moje zdjęcie">
+        <p>Moja historia z ziołolecznictwem rozpoczyna się w małej wsi, z silnymi słowiańskimi tradycjami, gdzie obserwowałem moje babcie, które wykorzystywały zioła do leczenia różnych chorób. Zawsze było to obecne w moim życiu. Jednak prawdziwy moment, który na zawsze zmienił moje podejście do ziołolecznictwa, nastąpił podczas poważnej choroby mojej mamy. To napar z piołunu uratował jej życie.</p>
+
+            <p>Od tego momentu zrozumiałem, jak potężne mogą być właściwości lecznicze roślin. Kiedy sam zmagałem się z poważnymi problemami neurologicznymi spowodowanymi stresem, to właśnie wykorzystanie piołunu przyniosło mi ogromną ulgę. Zakochałem się w ziołolecznictwie i roślinach, które stały się nieodłączną częścią mojego życia.</p>
+            
+            <p>Dla mnie ziołolecznictwo jest jak używanie kodów w grze - spożywając konkretne zioła, mogę "cheatować" w prawdziwym życiu. Jeśli chciałem poprawić kondycję włosów, piłem pokrzywę. Jeśli potrzebowałem uspokojenia, sięgałem po piołun lub CBD. Jeśli chciałem pobudzenia, wybierałem yerba mate, a jeśli potrzebowałem szybko zasnąć, piłem napar z lotosu różowego.</p>
+            
+            <p>Moje zainteresowanie ziołami było tak duże, że przez pewien czas studiowałem nawet biotechnologię, aby zgłębić tajemnice tych roślin. Teraz moja mama może się pochwalić ogromną kolekcją ziół, kiedy zaprasza znajomych na herbatkę. To dla nas nie tylko forma leczenia, ale również moment relaksu i bliskości z naturą, który jest niezwykle cenny w naszej rodzinie.
+            </p>
+
+            <p>P.S. Tutaj macie <a href="https://www.magicznyogrod.pl/">linka</a> do super stronki z ziołami.</p>
+    </div>
+    <script>
+        let activeInfo = null;
+
+        function toggleInfo(infoId) {
+            const infoContainers = document.getElementsByClassName("info-container");
+
+            if (activeInfo !== null) {
+                infoContainers[activeInfo - 1].classList.remove("active");
+            }
+
+            if (activeInfo === infoId) {
+                activeInfo = null;
+            } else {
+                infoContainers[infoId - 1].classList.add("active");
+                activeInfo = infoId;
+            }
+        }
+    </script>
+</body>
+
+</html>
